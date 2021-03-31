@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+.App {
+
+}
+
+.Child {
+    border: 1px solid;
+    margin: 20px;
+    height: 100px;
+    width: 200px;
+}
