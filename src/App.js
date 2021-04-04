@@ -20,12 +20,13 @@ const App = () => {
     }
 
     return (
-        <div className="App">
-            <h1>Hello from Parent: {counter}</h1>
-            <button onClick={handleCounterClick}>+1</button>
-            <input type="text" onChange={onInputChange}/>
-            <Child counter={counter} list={list}/>
-        </div>
+        // <div className="App">
+        //     <h1>Hello from Parent: {counter}</h1>
+        //     <button onClick={handleCounterClick}>+1</button>
+        //     <input type="text" onChange={onInputChange}/>
+        //     <Child counter={counter} list={list}/>
+        // </div>
+        <h1>Hello World!!</h1>
     )
 }
 
