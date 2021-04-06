@@ -26,7 +26,7 @@ const App = () => {
         //     <input type="text" onChange={onInputChange}/>
         //     <Child counter={counter} list={list}/>
         // </div>
-        <h1>Hello World from FL!!</h1>
+        <h1>Hello World!!</h1>
     )
 }
 
