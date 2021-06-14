@@ -10,6 +10,12 @@
     border: 1px solid;
     margin: 20px;
     height: 100px;
-    width: 200px;
+    width: 100vw;
 }
 
+.parent {
+    border: 1px solid;
+    margin: 20px;
+    height: 100px;
+    width: 100vw;
+}
