@@ -2,17 +2,18 @@ import React, { useState, useEffect } from "react";
 import { db } from "./firebase/firebase";
 import { useCollection } from "react-firebase-hooks/firestore";
 import Comment from "./Comment";
+import './Comments.css'
 
 const Comments = ({ user }) => {
   const demoComments = [
     {
-      comment: "test2",
+      comment: "Hello there!",
       email: "test2@example.com",
       timestamp: new Date(),
     },
     {
-      comment: "test1",
-      email: "test1@example.com",
+      comment: "thanks for sharing",
+      email: "quteng.bo@gmail.co",
       timestamp: new Date(),
     },
   ];
@@ -29,20 +30,22 @@ const Comments = ({ user }) => {
     e.preventDefault();
     console.log("submit");
     console.log("value to submit", inputValue);
-    const commentToAdd = {
+    if (inputValue) {
+      const commentToAdd = {
         timestamp: new Date(),
         comment: inputValue,
         email: user.email,
+      };
+      try {
+        const response = await db.collection("comments").add(commentToAdd);
+        console.log("response", response);
+        if (response) {
+          setComments([...demoComments, commentToAdd]);
+          setInputValue("");
+        }
+      } catch (error) {
+        console.log("error when inserting new comment", error.message);
       }
-    try {
-      const response = await db.collection("comments").add(commentToAdd);
-        console.log('response',response)
-      if(response) {
-        setComments([...demoComments, commentToAdd])
-        setInputValue('')
-      }
-    } catch (error) {
-      console.log("error when inserting new comment", error.message);
     }
   };
 
@@ -65,19 +68,21 @@ const Comments = ({ user }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div>
-      <span>Comments: {comments.length} </span>
+    <div className="comments">
+      <span className="comment_summary">Comments: {comments.length} </span>
       <div className="input_area">
         <form onSubmit={onCommentSubmit}>
           <input type="text" onChange={handleInputChange} value={inputValue} />
           <button type="submit">Post your Comment</button>
         </form>
       </div>
+      <div className="comment">
       {comments.map((comment) => (
         <div key={comment.comment}>
           <Comment comment={comment} />
         </div>
       ))}
+      </div>
     </div>
   );
 };

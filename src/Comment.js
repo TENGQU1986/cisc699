@@ -1,10 +1,11 @@
 import React from 'react'
+import './Comment.css'
 
 const Comment = ({comment}) => {
     return (
         <div className="comment_card">
-            <span>{comment.email}</span>
-            <span>{comment.comment}</span>
+            <span className="comment_author">{comment.email}</span>
+            <h4>{comment.comment}</h4>
         </div>
     )
 }

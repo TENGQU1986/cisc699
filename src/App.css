@@ -3,7 +3,10 @@
 }
 
 .App {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .Child {
@@ -19,3 +22,4 @@
     height: 100px;
     width: 100vw;
 }
+

@@ -1,0 +1,10 @@
+.comment_card {
+    padding: 5px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+.comment_author{
+    font-size: 12px;
+}
