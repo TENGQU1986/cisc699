@@ -2,7 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Download the App
+
+This project is albe to download at [Download the App](https://github.com/TENGQU1986/cisc699.git).
 ## Available Scripts
+
+After you download the App, you can install dependencies by running
+
+### `yarn install`
 
 In the project directory, you can run:
 
