@@ -12,7 +12,7 @@ describe("should render App", () => {
     user = null;
 
     const { container } = render(<Login />);
-    expect(container).toBeTruthy();
+    expect(container).toMatchSnapshot();
     
   });
 
@@ -21,13 +21,13 @@ describe("should render App", () => {
     loading = true;
 
     const { container } = render(<Loading />);
-    expect(container).toBeTruthy()
+    expect(container).toMatchSnapshot()
   });
 
   it('should render Parent component when there is user', () => {
       user = 'some user';
       loading = false;
       const { container } = render(<Parent />);
-      expect(container).toBeTruthy()
+      expect(container).toMatchSnapshot()
   })
 });

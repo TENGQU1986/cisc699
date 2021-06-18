@@ -31,12 +31,14 @@ const Parent = ({ user }) => {
     <div className="App">
       <Header user={user} />
       <div className="parent">
-        <button onClick={handleSwitch}>
+        <button onClick={handleSwitch} title="parent_button" className="button">
           {displayMemo ? "switch to unmemo" : "switch to memo"}
         </button>
         <h1>Hello from Parent: {counter}</h1>
-        <button onClick={handleCounterClick}>+1</button>
-        <input type="text" onChange={onInputChange} />
+        <div>
+          <button onClick={handleCounterClick}>+1</button>
+          <input type="text" onChange={onInputChange} title="parent_input" className="input"/>
+        </div>
       </div>
       {displayMemo ? (
         <Child counter={counter} list={list} />

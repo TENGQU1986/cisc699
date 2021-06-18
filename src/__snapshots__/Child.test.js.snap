@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Child component 1`] = `
+<div>
+  <div
+    class="Child"
+  >
+    <h1>
+      Child with Memoization - 
+    </h1>
+  </div>
+</div>
+`;

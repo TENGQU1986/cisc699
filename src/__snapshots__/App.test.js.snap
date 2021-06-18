@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render App should render Loading page when no user and loading is true 1`] = `
+<div>
+  <div>
+    <img
+      alt=""
+      height="200"
+      src="loader.gif"
+      width="200"
+    />
+  </div>
+</div>
+`;
+
+exports[`should render App should render Parent component when there is user 1`] = `
+<div>
+  <div
+    class="App"
+  >
+    <div
+      class="header"
+    >
+      <span />
+      <span />
+    </div>
+    <div
+      class="parent"
+    >
+      <button
+        class="button"
+        title="parent_button"
+      >
+        switch to memo
+      </button>
+      <h1>
+        Hello from Parent: 
+        0
+      </h1>
+      <div>
+        <button>
+          +1
+        </button>
+        <input
+          class="input"
+          title="parent_input"
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      class="Child"
+    >
+      <h1>
+        Child without Memoization - 
+        0
+      </h1>
+    </div>
+    <div
+      class="comments"
+    >
+      <span
+        class="comment_summary"
+      >
+        Comments: 
+        2
+         
+      </span>
+      <div
+        class="input_area"
+      >
+        <form>
+          <input
+            type="text"
+            value=""
+          />
+          <button
+            type="submit"
+          >
+            Post your Comment
+          </button>
+        </form>
+      </div>
+      <div
+        class="comment"
+      >
+        <div>
+          <div
+            class="comment_card"
+          >
+            <span
+              class="comment_author"
+            >
+              test2@example.com
+            </span>
+            <h4>
+              Hello there!
+            </h4>
+          </div>
+        </div>
+        <div>
+          <div
+            class="comment_card"
+          >
+            <span
+              class="comment_author"
+            >
+              quteng.bo@gmail.co
+            </span>
+            <h4>
+              thanks for sharing
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render App should render login page when no user 1`] = `
+<div>
+  <div>
+    <div
+      class="box-layout"
+    >
+      <div
+        class="box-layout__box"
+      >
+        <h1
+          class="box-layout__title"
+        >
+          React Performance
+        </h1>
+        <span>
+          Please login to share your thoughts.
+        </span>
+        <button
+          class="login-button"
+        >
+          Login with Google
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
