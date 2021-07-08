@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Child from "./Child";
 import ChildWithoutMemo from "./ChildWithoutMemo";
 import "./App.css";
-import Header from "./Header";
 import Comments from "./Comments";
+import LazyLoading from "./LazyLoading";
 
 const Parent = ({ user }) => {
   const [counter, setCounter] = useState(0);
@@ -29,7 +29,6 @@ const Parent = ({ user }) => {
   };
   return (
     <div className="App">
-      <Header user={user} />
       <div className="parent">
         <button onClick={handleSwitch} title="parent_button" className="button">
           {displayMemo ? "switch to unmemo" : "switch to memo"}
@@ -37,7 +36,12 @@ const Parent = ({ user }) => {
         <h1>Hello from Parent: {counter}</h1>
         <div>
           <button onClick={handleCounterClick}>+1</button>
-          <input type="text" onChange={onInputChange} title="parent_input" className="input"/>
+          <input
+            type="text"
+            onChange={onInputChange}
+            title="parent_input"
+            className="input"
+          />
         </div>
       </div>
       {displayMemo ? (
@@ -45,6 +49,8 @@ const Parent = ({ user }) => {
       ) : (
         <ChildWithoutMemo counter={counter} list={list} />
       )}
+
+      <LazyLoading className="parent" />
       <Comments user={user} />
     </div>
   );

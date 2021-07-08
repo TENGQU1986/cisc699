@@ -2,7 +2,22 @@ import React, { useState, useEffect } from "react";
 import { db } from "./firebase/firebase";
 import { useCollection } from "react-firebase-hooks/firestore";
 import Comment from "./Comment";
+import { Button } from '@material-ui/core';
 import './Comments.css'
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: '25ch',
+  },
+}));
 
 const Comments = ({ user }) => {
   const demoComments = [
@@ -49,6 +64,8 @@ const Comments = ({ user }) => {
     }
   };
 
+  const classes = useStyles();
+
   useEffect(() => {
     console.log("comments start");
     console.log("fectched", dbComments);
@@ -68,12 +85,26 @@ const Comments = ({ user }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
+    
     <div className="comments">
       <span className="comment_summary">Comments: {comments.length} </span>
       <div className="input_area">
         <form onSubmit={onCommentSubmit}>
-          <input type="text" onChange={handleInputChange} value={inputValue} />
-          <button type="submit">Post your Comment</button>
+        <TextField
+          id="standard-full-width"
+          onChange={handleInputChange}
+          value={inputValue} 
+          label="Comment"
+          style={{ margin: 8 }}
+          placeholder="Type comment here"
+          helperText="Don't contain personal information"
+          fullWidth
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+        />
+          <Button variant="contained" color="primary" type="submit">Post your Comment</Button>
         </form>
       </div>
       <div className="comment">
