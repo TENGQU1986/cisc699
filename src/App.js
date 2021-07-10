@@ -17,6 +17,8 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Comments from "./Comments";
 import ServerSide from "./ServerSide";
+import Demo from "./Demo";
+import ClientSide from "./ClientSide";
 
 const useStyles = makeStyles({
   root: {
@@ -70,7 +72,7 @@ const App = () => {
         {/* <Parent user={user} /> */}
         {
           step === 0 ? (<ServerSide />) : (
-            step === 1 ? (<h1>client-side</h1>) : (<h1>Demo</h1>)
+            step === 1 ? (<ClientSide />) : (<Demo user={user} />)
           ) 
         }
         <Comments />

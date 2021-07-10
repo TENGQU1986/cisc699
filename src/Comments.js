@@ -23,12 +23,12 @@ const Comments = ({ user }) => {
   const demoComments = [
     {
       comment: "Hello there!",
-      email: "test2@example.com",
+      email: "terryqu2021@gmail.com",
       timestamp: new Date(),
     },
     {
       comment: "thanks for sharing",
-      email: "quteng.bo@gmail.co",
+      email: "quteng.bo@gmail.com",
       timestamp: new Date(),
     },
   ];

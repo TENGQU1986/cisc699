@@ -29,6 +29,8 @@ const Parent = ({ user }) => {
   };
   return (
     <div className="App">
+      <h1>Rendering Times Demo</h1>
+      <span>hint: you can open developer tools to see the differentces</span>
       <div className="parent">
         <button onClick={handleSwitch} title="parent_button" className="button">
           {displayMemo ? "switch to unmemo" : "switch to memo"}
@@ -50,8 +52,6 @@ const Parent = ({ user }) => {
         <ChildWithoutMemo counter={counter} list={list} />
       )}
 
-      <LazyLoading className="parent" />
-      <Comments user={user} />
     </div>
   );
 };
