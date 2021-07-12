@@ -12,7 +12,6 @@ const Parent = ({ user }) => {
   const list = [1, 2, 3];
 
   useEffect(() => {
-    console.log("user", user);
   }, []);
 
   const handleCounterClick = () => {

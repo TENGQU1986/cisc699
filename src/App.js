@@ -46,7 +46,6 @@ const App = () => {
     } else if (e.target.innerHTML === 'Demo') {
       setStep(2)
     }
-    console.log(e.target.innerHTML)
   }
 
   return (
